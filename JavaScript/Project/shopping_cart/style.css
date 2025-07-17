@@ -1,0 +1,215 @@
+/* style.css */
+
+/* ---------- Global Reset & Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---------- Container ---------- */
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(30, 30, 30, 0.95);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    margin-bottom: 30px;
+}
+
+/* ---------- Titles ---------- */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+/* ---------- Product List ---------- */
+#product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.product:hover {
+    background-color: #292929;
+    transform: scale(1.02);
+}
+
+.product span {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* ---------- Add to Cart Button ---------- */
+.product button {
+    background: linear-gradient(135deg, #7b2ff7, #f107a3);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.product button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #9a4ef9, #f94ab4);
+}
+
+/* ---------- Cart Section ---------- */
+#cart-items {
+    width: 100%;
+    max-width: 500px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#cart-items div {
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+    font-size: 15px;
+}
+
+#cart-items div:last-child {
+    border-bottom: none;
+}
+
+#empty-cart {
+    font-style: italic;
+    color: #aaa;
+    text-align: center;
+}
+
+/* ---------- Cart Total & Checkout ---------- */
+#cart-total {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 16px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+#cart-total p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+#total-price {
+    color: #00ffcc;
+}
+
+#checkout-btn {
+    background-color: #00b894;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#checkout-btn:hover {
+    background-color: #00e6b8;
+    transform: scale(1.05);
+}
+
+/* ---------- Hidden Class ---------- */
+.hidden {
+    display: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .container, #cart-items, #cart-total {
+        padding: 16px;
+    }
+
+    .product {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .product span, .product button {
+        width: 100%;
+        text-align: left;
+    }
+
+    .product button {
+        align-self: flex-end;
+    }
+}
+/* ---------- Remove Button Styling ---------- */
+.remove-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    float: right;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.remove-btn:hover {
+    background: #ff6b5f;
+    transform: scale(1.05);
+}
+
+/* ---------- Cart Item Layout Fix ---------- */
+#cart-items div {
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart-items div:last-child {
+    border-bottom: none;
+}
+
+/* ---------- Mobile Responsive Fix for Cart Items ---------- */
+@media (max-width: 600px) {
+    #cart-items div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
